@@ -55,6 +55,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $payload = $request->all();
+        $payload['password'] = bcrypt($payload['password']); //Não conseguir ver a senha durante o update.
         $user = User::findOrFail($id);
         $user->update($payload);
         $user->save();
