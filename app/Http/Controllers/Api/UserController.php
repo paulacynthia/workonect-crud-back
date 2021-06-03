@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::paginate(8);
+        $users = User::paginate(8);
         return response()->json($users);
     }
 
@@ -41,7 +41,6 @@ class UserController extends Controller
      */
     public function show($id)
     {
-    
         $user = User::findOrFail($id); 
         return response()->json($user);
     }
