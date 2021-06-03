@@ -54,6 +54,11 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $payload = $request->all();
+        $user = User::findOrFail($id);
+        $user->update($payload);
+        $user->save();
+        return response()->json($user);
         
     }
 
@@ -65,6 +70,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return response('Deleted', 204);
         
     }
 }
