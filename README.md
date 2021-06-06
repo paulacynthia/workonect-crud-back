@@ -1,62 +1,159 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><img src="https://i.imgur.com/FHSPq78.png" width="300"></p><br>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+<h1> Workonect</h1> 
+<p>É uma empresa voltada para a desburocratização do empreendedorismo no Brasil.</p>  
+<p>Uma plataforma que, através da rede Block Chain, facilita a aquisição de Endereço Fiscal no Brasil todo em menos de 1h sem sair de casa.</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<br>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<h1> Informações:</h1>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Este projeto foi desenvolvido com o objetivo de cumprir o desafio proposto na entrevista da empresa Workonect, o qual solicitava a criação de um CRUD de usuários utilizando o framework Laravel.
 
-## Learning Laravel
+<br>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<h1>Pré-requisitos:</h1>
+<p>Clique nos links para ter acesso as documentações:</p>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+|Tecnologias Utilizadas e suas Versões:|
+|:------:|
+|[PHP](https://prototype.php.net/docs.php) >= 8.0.6|
+|[Laravel](https://laravel.com/docs/8.x) >= 4.2.6|
+|[XAMPP](https://www.apachefriends.org/docs/) >= 8.0.6|
+|[Composer](https://getcomposer.org/doc/) >= 2.0.14|
+|[Cmder](https://cmder.net/) >= 1.3.18.1106|
+<p>Obs: O Cmder é interessante para os usuários do Sistema Operacional Windows. Linux e Mac não precisam porque o sistema deles é baseado em UNIX.</p>
 
-## Laravel Sponsors
+<br>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<h1>Projeto:</h1>
 
-### Premium Partners
+1 - Primeiramente, clone o repositório: 
+```bash
+$ git clone https://github.com/paulacynthia/workonect-crud-back.git
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+2 - Na pasta do projeto faça a cópia do arquivo `.env.example` e renomeie-o para `.env`
+``` bash
+$ cp .env.example .env
+```
 
-## Contributing
+3 - No arquivo .env configure as variáveis de ambiente da aplicação com suas informações:
+``` env
+DB_CONNECTION=mysql
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+DB_HOST=127.0.0.1
 
-## Code of Conduct
+DB_PORT=3306
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+DB_DATABASE=crud
 
-## Security Vulnerabilities
+DB_USERNAME=root
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+DB_PASSWORD=
+```
 
-## License
+4 - Execute o comando abaixo para obter os pacotes necessários para a inicialização do projeto:
+``` bash
+$ composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5 - Para gerar a chave da aplicação:
+``` bash
+$ php artisan key:generate
+```
+
+6 - Crie o Banco de Dados no phpMyAdmin 
+``` 
+CREATE DATABASE crud;
+```
+<p>Obs: O nome do Banco de Dados deve ser referenciado no arquivo .env nas variáveis de ambiente.</p>
+
+7 - Suba as Migrations para o Banco de Dados
+``` bash 
+$ php artisan migrate 
+```
+<p> Obs: Se você fizer a adição do parâmetro ` --seed` você irá fazer o povoamento do banco de dados com informações.
+
+8 - Inicialização do servidor localmente: 
+``` bash
+$ php artisan serve
+```
+    
+9 - Para ver se está funcionando, abra seu navegador e acesse: `http://127.0.0.1:8000` ou também: `http://localhost:8000` 
+  
+<br>
+    
+<h2>Deploy:</h2>
+<p>The Laravel by default uses the MySQL, if you want deploy in Heroku, you have to change to PostgreSQL. Basta fazer a alteração no arquivo .env </p>
+
+<a href="https://crud-workonect.herokuapp.com/api/users"><img src="https://img.shields.io/static/v1?label=CRUD&message=Heroku&color=52007d&style=for-the-badge&logo=Heroku"/></a>
+
+<br>
+
+<h1>Informações sobre a API:</h1>
+<p>Os Endpoints suportados pela API são:</p>
+
+
+`POST`
+|Endpoints      | Descrição                       
+|:------|:------|
+|`/api/users`   | Realiza o registro de um novo usuário.
+
+`GET`
+|Endpoints      | Descrição 
+|:------|:------|
+|`/api/users`   | Retorna as informações de todos os usuários.
+|`/api/users/{id}`| Retorna as informações de um usuário específico.
+
+`PUT`
+|Endpoints      | Descrição
+|:------|:------| 
+|`/api/users/{id}`| Atualiza informações específicas. 
+
+`DELETE`
+|Endpoints      | Descrição
+|:------|:------|
+|`/api/users/{id}`| Apaga informações específicas. 
+
+<br>
+
+<h1>Demonstração da aplicação:</h1>
+<p>Utilizando o Insomnia:</p>
+
+<br/>
+
+<p>Criação de um usuário através do método POST:</p>
+<img src="./assets/create.png"/>
+
+<br/><br/>
+
+<p>Visualização de todos os usuários criados através do método GET:</p>
+<img src="./assets/read.png"/>
+
+<br/><br/>
+
+<p>Visualização de um usuário específico através do {id}:</p>
+<img src="./assets/read_esp.png"/>
+
+<br/><br/>
+
+<p>Atualização de um usuário específico por meio do {id} através do método PUT:</p>
+<img src="./assets/update.png"/>
+
+<br/><br/>
+
+<p>Remoção de um usuário específico por meio do {id} através do método DELETE:</p>
+<img src="./assets/delete.png"/>
+  
+<h1>Features</h1>
+
+- [x] Criação de usuário (Create);
+- [x] Visualização de usuários ou usuário específico (Read);
+- [x] Atualização de um usuário específico (Update);
+- [x] Remoção de um usuário específico (Delete).
+
+<h4 align="center">
+    Desafio: Concluído! :heavy_check_mark:
+</h4>
