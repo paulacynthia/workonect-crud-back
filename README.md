@@ -16,13 +16,9 @@
 
 |Technologies used and their Versions:|
 |:------:|
-|[PHP](https://prototype.php.net/docs.php) >= 8.0.6|
-|[Laravel](https://laravel.com/docs/8.x) >= 4.2.6|
-|[XAMPP](https://www.apachefriends.org/docs/) >= 8.0.6|
+|[PHP](https://prototype.php.net/docs.php) >= 7.2.5|
+|[MySQL](https://dev.mysql.com/doc/) >= 5.6|
 |[Composer](https://getcomposer.org/doc/) >= 2.0.14|
-|[Cmder](https://cmder.net/) >= 1.3.18.1106|
-<br/>
-<p><strong>Note:</strong> Cmder is interesting for Windows OS users. Linux and Mac don't need it because their system is based on UNIX.</p>
 
 <br/>
 
